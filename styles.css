@@ -7,4 +7,59 @@ padding:0;
 html, body {
 font-family: Helvetica, Aria, sans-serif;
 color: #000000;
+
+}
+
+body {
+	height:100vh;
+	overflow-y: hidden;
+	background: rgb(173,70,226);
+background: linear-gradient(180deg, rgba(173,70,226,1) 0%, rgba(0,116,255,1) 100%);
+}
+
+.calc-wrapper {
+	width:400px;
+	height:auto;
+	margin: 10% auto auto auto;
+	background-color: #ffffff;
+	
+}
+
+.calc-inner-container {
+	display: grid;
+	grid-gap: 2px;
+	justify-items: stretch;
+	align-items:stretch;
+	justify-content: stretch;
+	align-content: center;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+button {
+border-radius: 0;
+border: none;
+background: #b1edff;
+}
+
+button:hover {
+	background: #7fe0fd;
+}
+
+.cell {
+	height: 80px;
+	font-size:40px;
+	padding: 10px 14px 10px 14px;
+}
+
+.double-cell {
+	grid-column: span 2;
+}
+
+.output {
+	grid-column: span 4;
+	text-align: right;
+	color: #ffffff;
+background: #000000;
+height:100px;
+line-height: 2em;
 }
