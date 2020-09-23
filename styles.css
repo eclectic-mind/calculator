@@ -1,0 +1,10 @@
+html, body, main, div {
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html, body {
+font-family: Helvetica, Aria, sans-serif;
+color: #000000;
+}
