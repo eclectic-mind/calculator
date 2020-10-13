@@ -26,8 +26,8 @@ body {
 
 .calc-wrapper {
   width: 400px;
-  height: auto;
-  margin: 10% auto auto auto;
+  height: fit-content;
+  margin: 5% auto;
   background-color: #ffffff;
 }
 

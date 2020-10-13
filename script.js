@@ -19,7 +19,9 @@ class Calculator {
   }
 
   appendNumber(number) {
-    if (number === '.' && this.currentOperand.includes('.')) return;
+    if (number === 'point') {
+      number = '.';
+    }
     this.currentOperand = this.currentOperand.toString() + number.toString();
   }
 
@@ -55,8 +57,13 @@ class Calculator {
     const prev = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
     if (isNaN(prev) && isNaN(current)) return;
-    if (isNaN(current) && this.operation === 'sqrt') {
-      result = Math.sqrt(prev);
+    if (this.operation === 'sqrt') {
+      if (isNaN(prev) && !isNaN(current)) {
+        result = Math.sqrt(current);
+      }
+      if (!isNaN(prev) && isNaN(current)) {
+        result = Math.sqrt(prev);
+      }
     } else {
       switch (this.operation) {
         case 'plus':
@@ -131,7 +138,6 @@ clearButton.addEventListener('click', () => {
 });
 
 eraseButton.addEventListener('click', () => {
-  console.log('стёрли цифру');
   calculator.erase();
   calculator.updateDisplay();
 });
